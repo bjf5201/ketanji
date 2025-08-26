@@ -1,0 +1,84 @@
+[project]
+name = "ketanji"
+version = "0.1.0"
+author = [
+    { name = "Bethany Fannin", email = "contact@bethanyfannin.com" }
+]
+description = "MCP chatbot for the terminal, PoC for more involved app I'm working on, `eudai`"
+readme = "README.md"
+packages = [
+  { include = "ketanji", from = "src" }
+]
+urls = [
+    { repository = "https://github.com/bjf5201/ketanji" }
+    { docs = "https://github.com/bjf5201/ketanji/blob/main/README.md" }
+]
+requires-python = ">=3.13"
+keywords = [
+  "chatbot",
+  "ketanji",
+  "conversational-ai",
+  "task-assistant",
+  "privacy-focused",
+  "data-privacy",
+  "productivity",
+  "personal-knowledge-management",
+  "pkm",
+  "ai",
+  "llm",
+  "ollama",
+  "deepseek",
+  "fastapi"
+]
+classifiers = [
+  "Development Status :: 2 - Pre-Alpha",
+  "Intended Audience :: Technology Enthusiasts",
+  "License :: OSI Approved :: MIT License",
+  "Natural Language :: English",
+  "Programming Language :: Python :: 3.13",
+  "Largely Maintained :: Yes",
+  "Operating System :: OS Independent",
+  "Topic :: Artificial Intelligence",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+  "Topic :: Utilities",
+  "Topic :: Typed",
+  "Framework :: FastAPI",
+  "Framework :: uv"
+]
+dependencies = [
+    "fastapi[all]>=0.116.1",
+    "mkdocs>=1.6.1",
+    "mkdocs-material>=9.6.18",
+    "ollama>=0.5.3",
+    "python-whois>=0.9.5",
+    "pyyaml>=6.0.2",
+    "requests>=2.32.5",
+    "speedtest-cli>=2.1.3",
+    "sqlmodel>=0.0.24",
+    "supervisor>=4.3.0",
+    "typer>=0.16.1",
+    "uvicorn>=0.35.0",
+]
+
+[dependency-groups]
+lint = [
+    "black>=25.1.0",
+    "pyright>=1.1.404",
+    "ruff>=0.12.10",
+]
+test = [
+    "pytest>=8.4.1",
+    "pytest-cov>=6.2.1",
+]
+
+
+[tool.pyright]
+include = ["src"]
+exclude = ["tests",
+  "**/__pycache__",
+]
+ignore = ["src/lib/util.py"]
+
+pythonVersion = "3.13"
+pythonPlatform = "Linux"
+reportAttributeAccessIssue = "off"
